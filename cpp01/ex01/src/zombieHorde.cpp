@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lleichtn <lleichtn@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:28:20 by lleichtn          #+#    #+#             */
-/*   Updated: 2025/10/13 13:28:21 by lleichtn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
 
 Zombie* zombieHorde(int N, std::string name)
@@ -18,6 +6,6 @@ Zombie* zombieHorde(int N, std::string name)
 		return NULL;
 	Zombie* horde = new Zombie[N]; //alloue tab dynamique de zombie sur heap
 	for (int i = 0; i < N; ++i)
-		horde[i].setName(name); //attribue le meme nom a chacun
+		horde[i].setName(name); //attribue le meme nom
 	return horde;
 }

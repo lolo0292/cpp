@@ -71,19 +71,17 @@ int main(int argc, char** argv) {
     {
 		std::string name = argv[i];
 
-		// Si i est impair → zombie sur la pile
 		if ((i % 2) == 1) 
         {
 			std::cout << "[STACK] Creating " << name << std::endl;
 			randomChump(name);
 		}
-		// Si i est pair → zombie sur le tas
 		else 
         {
 			std::cout << "[HEAP]  Creating " << name << std::endl;
 			Zombie* z = newZombie(name);
 			z->announce();
-			delete z; // très important pour libérer la mémoire
+			delete z;
 		}
 
 		std::cout << std::endl;

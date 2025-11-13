@@ -22,37 +22,6 @@
 // 	return 0;
 // }
 
-// #include "Zombie.hpp"
-
-// // Prototypes des fonctions fournies par les autres fichiers
-// Zombie* newZombie(std::string name);
-// void    randomChump(std::string name);
-
-// int main(int argc, char** argv) {
-// 	if (argc < 2) {
-// 		std::cout << "Usage: " << argv[0] << " <zombie1> [zombie2] ..." << std::endl;
-// 		return 1;
-// 	}
-
-// 	std::cout << "Creating zombies...\n" << std::endl;
-
-// 	// Pour chaque argument après le nom de l’exécutable
-// 	for (int i = 1; i < argc; ++i) {
-// 		std::string name = argv[i];
-
-// 		// Exemple 1 : zombie sur la pile
-// 		randomChump(name + "_stack");
-
-// 		// Exemple 2 : zombie sur le tas
-// 		Zombie* z = newZombie(name + "_heap");
-// 		z->announce();
-// 		delete z; // on libère le zombie
-// 	}
-
-// 	std::cout << "\nAll zombies processed!" << std::endl;
-// 	return 0;
-// }
-
 #include "Zombie.hpp"
 
 // Prototypes des fonctions fournies par les autres fichiers

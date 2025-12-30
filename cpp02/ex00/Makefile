@@ -1,4 +1,3 @@
-# ========= Config =========
 NAME      := fixed
 CXX       := c++
 CXXFLAGS  := -Wall -Wextra -Werror -std=c++98 -I.
@@ -9,7 +8,6 @@ SRC       := $(wildcard $(SRCDIR)/*.cpp)
 OBJ       := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 DEPS      := $(OBJ:.o=.d)
 
-# ========= Rules =========
 all: $(NAME)
 
 $(NAME): $(OBJ)

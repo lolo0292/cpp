@@ -1,6 +1,6 @@
 NAME      := fixed
 CXX       := c++
-CXXFLAGS  := -Wall -Wextra -Werror -std=c++98 -I.
+CXXFLAGS  := -Wall -Wextra -Werror -std=c++98 -I. -O0 -fno-elide-constructors
 DEPFLAGS  := -MMD -MP
 
 SRC_DIR   := src

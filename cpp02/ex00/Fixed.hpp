@@ -3,20 +3,21 @@
 
 #include <iostream>
 
-class Fixed {
+class Fixed 
+{
 private:
-    int                 _raw;
+    int                 _raw; // entier stocke
     static const int    _fracBits; // toujours 8
 
 public:
-    // Canonical form (Coplien)
-    Fixed();                    // ctor par défaut
-    Fixed(const Fixed &other);  // ctor de copie
-    Fixed &operator=(const Fixed &other); // opérateur d'affectation
-    ~Fixed();                   // dtor
+    // Canonical form
+    Fixed(); //vonstr def
+    Fixed(const Fixed &other); // constr copie
+    Fixed &operator=(const Fixed &other); //oper affec
+    ~Fixed(); // destr
 
-    int  getRawBits() const;          // log + retourne _raw
-    void setRawBits(int const raw);   // log + écrit _raw
+    int  getRawBits() const;
+    void setRawBits(int const raw);
 };
 
-#endif // FIXED_HPP
+#endif

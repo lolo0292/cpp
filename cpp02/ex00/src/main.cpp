@@ -1,10 +1,10 @@
 #include "Fixed.hpp"
 
-int main() {
-    Fixed a;       // Default constructor
-    Fixed b(a);    // Copy constructor
-    Fixed c;       // Default constructor
-    c = b;         // Copy assignment operator
+int main(void) {
+    Fixed a;      
+    Fixed b(a);
+    Fixed c;      
+    c = b;
 
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;

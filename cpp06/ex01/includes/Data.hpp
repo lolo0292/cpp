@@ -1,0 +1,15 @@
+#ifndef DATA_HPP
+#define DATA_HPP
+
+#include <string>
+
+struct Data
+{
+	int         number;
+	std::string text;
+
+	Data();
+	Data(int n, const std::string &t);
+};
+
+#endif

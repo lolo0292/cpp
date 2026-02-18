@@ -1,10 +1,11 @@
 #include "Bureaucrat.hpp"
 
-// Constructors
+// Constructor of the class
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
 }
 
+// Constructor wh qttributes, name is const not modifiable after const
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: _name(name), _grade(grade)
 {
@@ -14,6 +15,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
 		throw GradeTooLowException();
 }
 
+// Cpy even if name const it works
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
 	: _name(other._name), _grade(other._grade)
 {
@@ -27,7 +29,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 	return *this;
 }
 
-// Destructor
+// Destructor useless mais form can
 Bureaucrat::~Bureaucrat()
 {
 }
@@ -43,7 +45,7 @@ int Bureaucrat::getGrade() const
 	return _grade;
 }
 
-// Grade management
+// Grade management gd 1 best gd 150 lowest
 void Bureaucrat::incrementGrade()
 {
 	if (_grade <= 1)
@@ -58,7 +60,7 @@ void Bureaucrat::decrementGrade()
 	++_grade;
 }
 
-// Exceptions
+// Exceptions message
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return "Grade too high";

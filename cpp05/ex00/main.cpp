@@ -2,7 +2,7 @@
 
 int main()
 {
-	try
+	try // Bloc protected if exception go catch
 	{
 		Bureaucrat a("Alice", 2);
 		Bureaucrat b("Bob", 150);
@@ -13,7 +13,7 @@ int main()
 		a.incrementGrade();
 		std::cout << a << std::endl;
 
-		b.decrementGrade(); // should throw
+		b.decrementGrade(); // should throw lower 150
 	}
 	catch (std::exception &e)
 	{

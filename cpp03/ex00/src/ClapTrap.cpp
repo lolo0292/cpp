@@ -1,22 +1,22 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-/*
- * Keep each function relatively short and explicit logging as required
- */
 
+//init calptrap avec valeur
 ClapTrap::ClapTrap(void)
 : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap Default constructor called for " << _name << '\n';
 }
 
+//nom en param
 ClapTrap::ClapTrap(const std::string &name)
 : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap Parameter constructor called for " << _name << '\n';
 }
 
+// cree la copie
 ClapTrap::ClapTrap(const ClapTrap &other)
 : _name(other._name), _hitPoints(other._hitPoints),
   _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
@@ -24,6 +24,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	std::cout << "ClapTrap Copy constructor called for " << _name << '\n';
 }
 
+// copie data dans objets existant
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
 	if (this != &other)
@@ -37,11 +38,13 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	return *this;
 }
 
+// destructeur
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "ClapTrap Destructor called for " << _name << '\n';
 }
 
+// attaque verif mort et energie et perd energie
 void ClapTrap::attack(const std::string &target)
 {
 	if (_hitPoints <= 0)
@@ -59,6 +62,7 @@ void ClapTrap::attack(const std::string &target)
 	          << ", causing " << _attackDamage << " points of damage! (EP=" << _energyPoints << ")\n";
 }
 
+// convert en int et fait perdre pv
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	int dmg = static_cast<int>(amount);
@@ -68,6 +72,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap " << _name << " takes " << dmg << " points of damage! (HP=" << _hitPoints << ")\n";
 }
 
+// regenere claptrap si pas dead
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hitPoints <= 0)

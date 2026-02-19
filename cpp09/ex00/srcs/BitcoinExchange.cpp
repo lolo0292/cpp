@@ -43,7 +43,6 @@ static bool allDigits(const std::string& s) {
 }
 
 bool BitcoinExchange::isValidDate(const std::string& date) {
-	// Must be exactly YYYY-MM-DD
 	if (date.size() != 10) return false;
 	if (date[4] != '-' || date[7] != '-') return false;
 

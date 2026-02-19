@@ -1,25 +1,33 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap("anon-Scav") {
+//init scav
+ScavTrap::ScavTrap() : ClapTrap("anon-Scav") 
+{
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
     std::cout << "ScavTrap default ctor: " << _name << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
+//init avec nom
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) 
+{
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
     std::cout << "ScavTrap name ctor: " << _name << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+//constrc copie
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) 
+{
     std::cout << "ScavTrap copy ctor: " << _name << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+// copie data dans objets existant
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) 
+{
     if (this != &other) {
         ClapTrap::operator=(other);
     }
@@ -27,11 +35,14 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
     return *this;
 }
 
-ScavTrap::~ScavTrap() {
+// destructeur
+ScavTrap::~ScavTrap() 
+{
     std::cout << "ScavTrap dtor: " << _name << std::endl;
 }
 
-void ScavTrap::attack(const std::string& target) {
+void ScavTrap::attack(const std::string& target) 
+{
     if (_hitPoints <= 0) {
         std::cout << "ScavTrap " << _name << " cannot attack (no HP)" << std::endl;
         return;
@@ -45,6 +56,8 @@ void ScavTrap::attack(const std::string& target) {
               << ", dealing " << _attackDamage << " damage!" << std::endl;
 }
 
-void ScavTrap::guardGate() {
+//useless mais sujet
+void ScavTrap::guardGate() 
+{
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
 }

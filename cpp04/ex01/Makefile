@@ -11,7 +11,9 @@ SRCS	= main.cpp \
 		  $(SRCDIR)/Animal.cpp \
 		  $(SRCDIR)/Dog.cpp \
 		  $(SRCDIR)/Cat.cpp \
-		  $(SRCDIR)/Brain.cpp
+		  $(SRCDIR)/Brain.cpp \
+		  $(SRCDIR)/WrongAnimal.cpp \
+		  $(SRCDIR)/WrongCat.cpp
 
 OBJS	= $(SRCS:%.cpp=$(OBJDIR)/%.o)
 

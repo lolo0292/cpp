@@ -8,7 +8,7 @@ int main() {
         a.beRepaired(15);
         a.takeDamage(30);
         a.guardGate();
-        for (int i = 0; i < 55; ++i) a.attack("dummy"); // vidage énergie
+        for (int i = 0; i < 55; ++i) a.attack("dummy");
         a.beRepaired(5);
         a.takeDamage(200);
         a.attack("late");

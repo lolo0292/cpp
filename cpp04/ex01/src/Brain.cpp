@@ -1,11 +1,13 @@
 #include "Brain.hpp"
 
+//cree brain init ideas a une chaine vide
 Brain::Brain()
 {
 	for (int i = 0; i < 100; i++)
 		_ideas[i] = "";
 }
 
+//copie contnu autre brain
 Brain::Brain(const Brain &other)
 {
 	*this = other;
@@ -21,10 +23,12 @@ Brain &Brain::operator=(const Brain &other)
 	return *this;
 }
 
+// destructeur tableau stat sans new rien a free
 Brain::~Brain()
 {
 }
 
+// modifie idee 
 void Brain::setIdea(int index, const std::string &idea)
 {
 	if (index < 0 || index >= 100)

@@ -23,4 +23,4 @@ private:
 	int _attackDamage;
 };
 
-#endif // CLAPTRAP_HPP
+#endif

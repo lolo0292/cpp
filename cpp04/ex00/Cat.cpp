@@ -1,11 +1,13 @@
 #include "Cat.hpp"
 
+//ecrae aimal et et remp par cat
 Cat::Cat()
 {
 	this->type = "Cat";
 	std::cout << "Cat: default constructor called" << std::endl;
 }
 
+//copie la partie animal
 Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat: copy constructor called" << std::endl;
@@ -24,6 +26,7 @@ Cat::~Cat()
 	std::cout << "Cat: destructor called" << std::endl;
 }
 
+//polymorphisme
 void Cat::makeSound() const
 {
 	std::cout << "Miaou!" << std::endl;

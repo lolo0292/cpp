@@ -43,7 +43,7 @@ int main()
 	std::cout << wc->getType() << " " << std::endl;
 
 	wa->makeSound();
-	wc->makeSound(); // doit sortir le son de WrongAnimal, pas WrongCat
+	wc->makeSound();
 
 	delete wa;
 	delete wc;

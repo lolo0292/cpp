@@ -35,6 +35,7 @@ void AForm::beSigned(const Bureaucrat &b)
 	_isSigned = true;
 }
 
+// logic of 02 check if evrything is good
 void AForm::execute(Bureaucrat const &executor) const
 {
 	if (!_isSigned)

@@ -20,8 +20,8 @@ int main()
 	std::cout << "\n--- create forms ---" << std::endl;
 	AForm *f1 = intern.makeForm("robotomy request", "Bender");
 	AForm *f2 = intern.makeForm("shrubbery creation", "home");
-	AForm *f3 = intern.makeForm("presidential pardon", "Arthur Dent");
-	AForm *f4 = intern.makeForm("tax evasion", "lol");
+	AForm *f3 = intern.makeForm("presidential pardon", "lleichtn");
+	AForm *f4 = intern.makeForm("error", "XXX");
 
 	std::cout << "\n--- sign + execute ---" << std::endl;
 
@@ -43,11 +43,22 @@ int main()
 
 	if (f3)
 	{
-		mid.signForm(*f3);   // should fail (needs 25)
-		boss.signForm(*f3);  // ok
-		mid.executeForm(*f3); // should fail (needs 5)
-		boss.executeForm(*f3); // ok
+		mid.signForm(*f3);
+		boss.signForm(*f3);
+		mid.executeForm(*f3);
+		boss.executeForm(*f3);
 	}
+	
+	std::cout << "\n--- test ---" << std::endl;
+	if (f4)
+	{
+		mid.signForm(*f4);
+		boss.signForm(*f4);
+		mid.executeForm(*f4);
+		boss.executeForm(*f4);
+		std::cout << "\n--- rentre pas ---" << std::endl;
+	}
+	std::cout << "\n--- lis bien ---" << std::endl;
 
 	std::cout << "\n--- cleanup ---" << std::endl;
 	delete f1;

@@ -16,8 +16,12 @@ INCLUDES = -I$(INC_DIR)
 
 all: $(NAME)
 
+GREEN		= \033[0;32m
+
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(GREEN)✔ Compilation complete$(RESET)"
+
 
 $(OBJ_DIR)/%.o: %.cpp
 	mkdir -p $(dir $@)

@@ -17,11 +17,8 @@ SRCS		= main.cpp \
 
 OBJS		= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
-# Colors
+
 GREEN		= \033[0;32m
-BLUE		= \033[0;34m
-RED			= \033[0;31m
-RESET		= \033[0m
 
 all: $(NAME)
 
@@ -32,15 +29,12 @@ $(NAME): $(OBJS)
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
-	@echo "$(BLUE)Compiling $<$(RESET)"
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(RED)Obj files removed$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED)Executable removed$(RESET)"
 
 re: fclean all
 

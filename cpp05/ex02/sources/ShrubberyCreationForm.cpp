@@ -24,6 +24,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 const std::string &ShrubberyCreationForm::getTarget() const { return _target; }
 
+// cree fichier and a tree inside
 void ShrubberyCreationForm::action() const
 {
 	std::ofstream ofs((_target + "_shrubbery").c_str());

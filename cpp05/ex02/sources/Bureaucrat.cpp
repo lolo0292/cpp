@@ -40,7 +40,7 @@ void Bureaucrat::decrementGrade()
 	++_grade;
 }
 
-// ex02
+// ex02 take Aform now
 void Bureaucrat::signForm(AForm &form) const
 {
 	try
@@ -55,6 +55,7 @@ void Bureaucrat::signForm(AForm &form) const
 	}
 }
 
+// execute Aform exec shrubberyCF
 void Bureaucrat::executeForm(AForm const &form) const
 {
 	try

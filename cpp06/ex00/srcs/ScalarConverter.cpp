@@ -8,6 +8,7 @@
 #include <cctype>
 #include <cmath>
 
+// Same as global 
 namespace
 {
 	enum eType
@@ -25,10 +26,11 @@ namespace
 
 	static bool isInf(double x)
 	{
-		// Works well with strtod which returns +/-HUGE_VAL on overflow
+		// Check overflow
 		return (x == HUGE_VAL || x == -HUGE_VAL);
 	}
 
+	//check i fint
 	static bool isIntLiteral(const std::string &s)
 	{
 		size_t i = 0;
@@ -48,15 +50,15 @@ namespace
 
 	static bool isCharLiteral(const std::string &s)
 	{
-		// 'c'
 		if (s.size() == 3 && s[0] == '\'' && s[2] == '\'')
 			return true;
-		// single non-digit character: a, Z, *
+		// single nn digit car
 		if (s.size() == 1 && !std::isdigit(static_cast<unsigned char>(s[0])))
 			return true;
 		return false;
 	}
 
+	// check end for f
 	static bool endsWith(const std::string &s, const std::string &suffix)
 	{
 		if (s.size() < suffix.size())
@@ -64,6 +66,7 @@ namespace
 		return s.compare(s.size() - suffix.size(), suffix.size(), suffix) == 0;
 	}
 
+	// check type of arg
 	static eType detectType(const std::string &s)
 	{
 		if (s == "nanf" || s == "+inff" || s == "-inff" || s == "inff")
@@ -77,7 +80,6 @@ namespace
 		if (isIntLiteral(s))
 			return T_INT;
 
-		// Float with trailing 'f' (common form)
 		if (endsWith(s, "f") && s.size() > 1)
 		{
 			std::string core = s.substr(0, s.size() - 1);
@@ -88,7 +90,6 @@ namespace
 				return T_FLOAT;
 		}
 
-		// Double
 		{
 			char *end = 0;
 			errno = 0;
@@ -122,6 +123,7 @@ namespace
 		std::cout << "'" << c << "'\n";
 	}
 
+	// Round up as cast in int
 	static void printInt(double d)
 	{
 		std::cout << "int: ";
@@ -139,6 +141,7 @@ namespace
 		std::cout << static_cast<int>(d) << "\n";
 	}
 
+	// use 0.0
 	static bool hasZeroFraction(double d)
 	{
 		if (isNan(d) || isInf(d))
@@ -152,7 +155,7 @@ namespace
 	{
 		std::cout << "float: ";
 
-		// Pseudo / special cases
+		// Pseudo
 		if (isNan(d))
 		{
 			std::cout << "nanf\n";
@@ -167,7 +170,6 @@ namespace
 			return;
 		}
 
-		// Range check for float (optional but nice)
 		if (d > static_cast<double>(std::numeric_limits<float>::max()) ||
 			d < -static_cast<double>(std::numeric_limits<float>::max()))
 		{
@@ -235,7 +237,6 @@ namespace
 		}
 		if (t == T_INT)
 		{
-			// Use strtol to avoid UB if too large
 			char *end = 0;
 			errno = 0;
 			long v = std::strtol(s.c_str(), &end, 10);

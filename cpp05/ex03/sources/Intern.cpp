@@ -28,18 +28,21 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target) cons
 {
 	typedef AForm *(Intern::*t_creator)(const std::string &) const;
 
+	// Struct assoc key to creation fct
 	struct Pair
 	{
 		const char	*key;
 		t_creator	create;
 	};
 
+	// Stat tabke forms name -> creat fct
 	static const Pair table[] = {
 		{ "shrubbery creation", &Intern::createShrubbery },
 		{ "robotomy request", &Intern::createRobotomy },
 		{ "presidential pardon", &Intern::createPresidential }
 	};
 
+	// Find matching form name
 	for (int i = 0; i < 3; ++i)
 	{
 		if (name == table[i].key)
@@ -49,6 +52,7 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target) cons
 			return f;
 		}
 	}
+	//error
 	std::cerr << "Intern cannot create form \"" << name << "\" (unknown form)" << std::endl;
 	return NULL;
 }

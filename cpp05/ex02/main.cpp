@@ -9,9 +9,9 @@ int main()
 	Bureaucrat mid("Mid", 50);
 	Bureaucrat low("Low", 150);
 
-	ShrubberyCreationForm shrub("home");
+	ShrubberyCreationForm shrub("test");
 	RobotomyRequestForm robo("Bender");
-	PresidentialPardonForm pardon("Arthur Dent");
+	PresidentialPardonForm pardon("lleichtn");
 
 	std::cout << "\n=== Try execute without signing ===" << std::endl;
 	boss.executeForm(shrub);

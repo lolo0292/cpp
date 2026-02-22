@@ -1,11 +1,12 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-// Constructors
+// Constructors defualt
 Form::Form() : _name("DefaultForm"), _isSigned(false), _gradeToSign(150), _gradeToExec(150)
 {
 }
 
+// Constructors with params
 Form::Form(const std::string &name, int gradeToSign, int gradeToExec)
 	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
@@ -15,6 +16,7 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExec)
 		throw GradeTooLowException();
 }
 
+// Constructors copy
 Form::Form(const Form &other)
 	: _name(other._name),
 	  _isSigned(other._isSigned),
@@ -57,7 +59,7 @@ int Form::getGradeToExec() const
 	return _gradeToExec;
 }
 
-// Signing
+// Signing formm
 void Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > _gradeToSign)
@@ -76,7 +78,7 @@ const char *Form::GradeTooLowException::what() const throw()
 	return "Form grade too low";
 }
 
-// Operator <<
+// Operator print name sined/not grade to sign/exec
 std::ostream &operator<<(std::ostream &os, const Form &f)
 {
 	os << "Form \"" << f.getName() << "\""

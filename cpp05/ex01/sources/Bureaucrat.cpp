@@ -6,6 +6,7 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
 }
 
+//same as 00
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: _name(name), _grade(grade)
 {
@@ -59,7 +60,7 @@ void Bureaucrat::decrementGrade()
 	++_grade;
 }
 
-// ex01
+// new modifie form 
 void Bureaucrat::signForm(Form &form) const
 {
 	try

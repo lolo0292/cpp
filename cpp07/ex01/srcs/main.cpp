@@ -30,7 +30,6 @@ static void toUpperChar(char& c)
 
 int main(void)
 {
-	// 1) int non-const + modif
 	int nums[] = {1, 2, 3, 4};
 	std::cout << "nums before: ";
 	iter(nums, 4, &printInt);
@@ -41,13 +40,11 @@ int main(void)
 	iter(nums, 4, &printInt);
 	std::cout << std::endl;
 
-	// 2) std::string const (test const)
 	const std::string words[] = {"salut", "les", "gens"};
 	std::cout << "words      : ";
 	iter(words, 3, &printStr);
 	std::cout << std::endl;
 
-	// 3) char non-const + modif
 	char letters[] = {'a', 'b', 'c', 'Z'};
 	std::cout << "letters before: ";
 	iter(letters, 4, &printChar);

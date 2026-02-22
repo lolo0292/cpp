@@ -3,7 +3,7 @@
 
 #include <cstddef>
 
-// version non-const: permet de modifier les éléments si f prend T&
+//nn const peux mod
 template <typename T>
 void iter(T* array, std::size_t len, void (*f)(T&))
 {
@@ -13,7 +13,6 @@ void iter(T* array, std::size_t len, void (*f)(T&))
 		f(array[i]);
 }
 
-// version const: supporte les tableaux const + les fonctions qui prennent const T&
 template <typename T>
 void iter(const T* array, std::size_t len, void (*f)(const T&))
 {

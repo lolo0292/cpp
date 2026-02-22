@@ -9,7 +9,7 @@ Array<T>::Array(unsigned int n) : _data(NULL), _size(n)
 {
 	if (_size == 0)
 		return;
-	_data = new T[_size]; // default-initialized
+	_data = new T[_size];
 }
 
 template <typename T>

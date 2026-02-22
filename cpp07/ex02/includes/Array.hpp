@@ -1,8 +1,8 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
-#include <cstddef>     // size_t
-#include <exception>   // std::exception
+#include <cstddef>
+#include <exception>
 
 template <typename T>
 class Array
